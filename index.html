@@ -9,13 +9,16 @@
 <body>
     <section class = "header">
         <nav>
-            <a href="index.html"><img src = "images/logo-removebg-preview.png">></a>
-            <div class ="nav-links">
+            <a href="index.html"><img class="main-logo" src="images/logo-removebg-preview.png"></a>
+            <div class="nav-links">
                 <ul>
                     <li><a href ="">HOME</a></li>
                     <li><a href ="">FIND</a></li>
                     <li><a href ="">CONTACT US</a></li>
                 </ul>
+                <div class="group-logo-container">
+                    <a href="index.html"><img class="group-logo" src="images/group_logo.png" alt="Group Logo"></a>
+                </div>
             </div>
         </nav>
     <div class="box">
@@ -26,18 +29,14 @@
         <a href="" class="box-dts">Find</a>
     </div>
     </section>
-<!--find-->
 <section class = "find">
     <h1>Find the pokemon's</h1>
-    <!-- Search Box -->
     <input type="text" id="pokemonName" placeholder="Enter Pokémon name...">
     <button onclick="findPokemon()">Search</button>
 
-    <!-- Result Box -->
     <div id="pokemonResult"></div>
 </section>
 
-<!-- Add JS before closing body -->
 <script>
     async function findPokemon() {
         const name = document.getElementById("pokemonName").value.toLowerCase();
