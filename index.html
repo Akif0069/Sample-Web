@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon: Find Them All!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class = "header">
+        <nav>
+            <a href="index.html"><img src = "images/logo-removebg-preview.png">></a>
+            <div class ="nav-links">
+                <ul>
+                    <li><a href ="">HOME</a></li>
+                    <li><a href ="">FIND</a></li>
+                    <li><a href ="">CONTACT US</a></li>
+                </ul>
+            </div>
+        </nav>
+    <div class="box">
+        <h1>Find the pokemon</h1>
+        <p>In the world full of humans and pokemons its hard to find the one we're searching for.
+        <br>That's why we're here to help you
+        </p>
+        <a href="" class="box-dts">Find</a>
+    </div>
+    </section>
+<!--find-->
+<section class = "find">
+    <h1>Find the pokemon's</h1>
+    <!-- Search Box -->
+    <input type="text" id="pokemonName" placeholder="Enter Pokémon name...">
+    <button onclick="findPokemon()">Search</button>
+
+    <!-- Result Box -->
+    <div id="pokemonResult"></div>
+</section>
+
+<!-- Add JS before closing body -->
+<script>
+    async function findPokemon() {
+        const name = document.getElementById("pokemonName").value.toLowerCase();
+        const resultDiv = document.getElementById("pokemonResult");
+
+        if (!name) {
+            resultDiv.innerHTML = "<p>Please enter a Pokémon name!</p>";
+            return;
+        }
+
+        try {
+            const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
+            if (!response.ok) {
+                throw new Error("Pokémon not found");
+            }
+            const data = await response.json();
+
+            resultDiv.innerHTML = `
+                <h2>${data.name.toUpperCase()}</h2>
+                <img src="${data.sprites.front_default}" alt="${data.name}">
+                <p><b>Height:</b> ${data.height}</p>
+                <p><b>Weight:</b> ${data.weight}</p>
+                <p><b>Type:</b> ${data.types.map(t => t.type.name).join(", ")}</p>
+            `;
+        } catch (error) {
+            resultDiv.innerHTML = "<p>❌ Pokémon not found. Try again!</p>";
+        }
+    }
+</script>
+</section>
+
+</body>
+</html>
