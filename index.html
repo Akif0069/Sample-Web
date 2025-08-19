@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <section class = "header">
+    <section class="header" id="home">
         <nav>
             <a href="index.html"><img class="main-logo" src="images/logo-removebg-preview.png"></a>
             <div class="nav-links">
                 <ul>
-                    <li><a href ="">HOME</a></li>
-                    <li><a href ="">FIND</a></li>
-                    <li><a href ="">CONTACT US</a></li>
+                    <li><a href="#home">HOME</a></li>
+                    <li><a href="#find">FIND</a></li>
+                    <li><a href="#contact">CONTACT US</a></li>
                 </ul>
                 <div class="group-logo-container">
                     <a href="index.html"><img class="group-logo" src="images/group_logo.png" alt="Group Logo"></a>
@@ -26,10 +26,10 @@
         <p>In the world full of humans and pokemons its hard to find the one we're searching for.
         <br>That's why we're here to help you
         </p>
-        <a href="" class="box-dts">Find</a>
+        <a href="#find" class="box-dts" onclick="focusSearch()">Find</a>
     </div>
     </section>
-<section class = "find">
+<section class="find" id="find">
     <h1>Find the pokemon's</h1>
     <input type="text" id="pokemonName" placeholder="Enter Pokémon name...">
     <button onclick="findPokemon()">Search</button>
@@ -64,6 +64,11 @@
         } catch (error) {
             resultDiv.innerHTML = "<p>❌ Pokémon not found. Try again!</p>";
         }
+    function focusSearch() {
+        setTimeout(() => {
+            document.getElementById("pokemonName").focus();
+        }, 300);
+    }
     }
 </script>
 </section>

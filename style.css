@@ -133,6 +133,10 @@ nav img{
     transition: 0.3s;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .find button:hover {
     background: #cc0000;
     transform: scale(1.05);
