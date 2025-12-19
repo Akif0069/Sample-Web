@@ -141,3 +141,59 @@ html {
     width: 250px;
     margin: 15px 0;
 }
+.contact {
+    text-align: center;
+    padding: 80px 20px;
+    background: #ffffff;
+}
+
+.contact h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.contact p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+    outline: none;
+    transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #f44336;
+    box-shadow: 0 0 8px rgba(244,67,54,0.3);
+}
+
+.contact-form button {
+    padding: 12px;
+    background: #f44336;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: #cc0000;
+    transform: scale(1.05);
+}
