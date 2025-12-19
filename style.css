@@ -20,11 +20,6 @@ nav{
     justify-content: space-between;
     align-items: center;
 }
-nav img{
-    width: 250px;
-    height: 250px;
-    
-}
 .nav-links{
     flex: 1;
     text-align: right;
@@ -138,8 +133,8 @@ html {
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 #pokemonResult img {
-    width: 250px;
-    margin: 15px 0;
+    max-width: 250px;
+    width: 100%;
 }
 .contact {
     text-align: center;
@@ -196,4 +191,59 @@ html {
 .contact-form button:hover {
     background: #cc0000;
     transform: scale(1.05);
+}
+@media (max-width: 768px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .main-logo {
+        width: 200px;
+    }
+
+    .nav-links {
+        text-align: center;
+    }
+
+    .nav-links ul li {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .nav-links ul li a {
+        font-size: 20px;
+    }
+
+    .box h1 {
+        font-size: 36px;
+    }
+
+    .box p {
+        font-size: 14px;
+    }
+
+    .find {
+        width: 90%;
+        padding: 30px 15px;
+    }
+
+    .find input {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .find button {
+        width: 100%;
+    }
+
+    #pokemonResult img {
+        width: 180px;
+    }
+
+    .contact-form {
+        width: 100%;
+        padding: 0 10px;
+    }
 }
